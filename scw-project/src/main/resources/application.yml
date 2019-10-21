@@ -1,0 +1,35 @@
+spring: 
+  application:
+    name: SCW-PROJECT
+  datasource:
+    username: root
+    password: 104525
+    url: jdbc:mysql://192.168.186.128/atcrowdfunding?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    filters: stat
+  redis:
+    password: 104525
+    host: 192.168.186.128
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 50MB
+        
+        
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+ 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    appname: SCW-PROJECT
+    prefer-ip-address: true
+
+server:
+  port: 8000
+swagger2:
+  enable: true
